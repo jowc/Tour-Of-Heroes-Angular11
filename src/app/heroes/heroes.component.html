@@ -9,14 +9,21 @@
     justify-center
   "
 >
-  <div class="py-6 px-4 bg-gray-50 shadow rounded">
+  <div class="py-6 px-6 bg-gray-50 shadow rounded">
     <div class="bg-white">
       <h2 class="my-3 p-2 bg-purple-500 text-white">My Heroes</h2>
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <ul>
+          <ul class="overflow-y-scroll h-96 pr-3">
             <li
-              class="my-3 p-2 text-gray-600 hover:bg-purple-50 cursor-pointer"
+              class="
+                my-3
+                p-2
+                text-gray-600
+                hover:bg-purple-50
+                hover:shadow-sm
+                cursor-pointer
+              "
               *ngFor="let hero of heroes"
               (click)="onSelect(hero)"
               [class.bg-purple-50]="hero === selectedHero"
@@ -28,18 +35,7 @@
             </li>
           </ul>
         </div>
-        <div class="py-6 px-4 bg-gray-50 shadow rounded" *ngIf="selectedHero">
-          <h2>{{ selectedHero.name | uppercase }} Details</h2>
-          <div><span>id: </span>{{ selectedHero.id }}</div>
-          <div>
-            <label for="hero-name">Hero name: </label>
-            <input
-              id="hero-name"
-              [(ngModel)]="selectedHero.name"
-              placeholder="name"
-            />
-          </div>
-        </div>
+        <app-hero-detail [hero]="selectedHero"></app-hero-detail>
       </div>
     </div>
   </div>
