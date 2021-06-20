@@ -17,5 +17,5 @@ export class HeroService {
     return heroes;
   }
 
-  constructor(private messageService: MessageService) { }
+  constructor(public messageService: MessageService) { }
 }
