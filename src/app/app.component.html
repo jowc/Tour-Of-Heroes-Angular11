@@ -2,11 +2,16 @@
   <h1 class="text-3xl text-gray-800 my-12 text-center font-extrabold font-mont">
     {{ title | uppercase }}
   </h1>
+  <nav class="text-center">
+    <a routerLink="/">Home</a> | <a routerLink="detail">Details</a> |
+    <a routerLink="dashboard">Dashboard</a>
+  </nav>
 </header>
 
 <main>
-  <app-heroes></app-heroes>
-  <app-messages></app-messages>
+  <router-outlet></router-outlet>
 </main>
 
-<router-outlet></router-outlet>
+<footer>
+  <app-messages></app-messages>
+</footer>
