@@ -13,6 +13,18 @@
   <div class="py-6 px-6 bg-gray-50 shadow rounded">
     <div class="bg-white">
       <h2 class="my-3 p-2 bg-primary text-white">My Heroes</h2>
+      <div>
+        <label for="new-hero">Hero name: </label>
+        <input id="new-hero" #heroName />
+
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button
+          class="add-button"
+          (click)="add(heroName.value); heroName.value = ''"
+        >
+          Add hero
+        </button>
+      </div>
       <div class="grid grid-cols-2 gap-4">
         <div>
           <ul class="overflow-y-scroll h-96 pr-3">
@@ -29,8 +41,13 @@
               <div routerLink="/detail/{{ hero.id }}">
                 <span class="p-2 bg-primary text-white rounded mr-4">{{
                   hero.id
-                }}</span
-                >{{ hero.name }}
+                }}</span>
+
+                {{ hero.name }}
+
+                <button class="" title="delete hero" (click)="delete(hero)">
+                  x
+                </button>
               </div>
             </li>
           </ul>
