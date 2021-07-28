@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { DetailtestComponent } from './detailtest/detailtest.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroDetailComponent,
     MessagesComponent,
     DetailtestComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
