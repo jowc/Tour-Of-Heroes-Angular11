@@ -1,12 +1,28 @@
-<div class="py-6 px-4 bg-gray-50 shadow rounded mr-4 self-center" *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ hero.id }}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
-  </div>
-  <div class="flex justify-between">
-    <button (click)="goBack()">go back</button>
-    <button (click)="save(hero)">save</button>
+<div class="max-w-4xl mx-auto mt-6 font-quest font-normal">
+  <div class="py-6 px-6 bg-gray-50 shadow rounded" *ngIf="hero">
+    <div class="bg-white p-4">
+      <h2 class="my-3 p-2 bg-primary text-white font-extrabold rounded">
+        {{ hero.name | uppercase }}
+      </h2>
+      <div class="p-2">
+        <div class="flex">
+          <span class="w-2/6">id: </span>
+          <span class="w-full">{{ hero.id }}</span>
+        </div>
+        <div class="flex">
+          <label for="hero-name" class="w-2/6">Change name: </label>
+          <input
+            id="hero-name"
+            [(ngModel)]="hero.name"
+            placeholder="name"
+            class="bg-gray-50 w-full p-1 rounded"
+          />
+        </div>
+        <div class="flex justify-between mt-6">
+          <button (click)="goBack()">go back</button>
+          <button (click)="save(hero)">save</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
