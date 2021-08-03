@@ -5,6 +5,7 @@
     max-w-4xl
     mx-auto
     mt-6
+    pb-10
     content-center
     justify-center
     font-quest font-normal
@@ -21,16 +22,24 @@
           <input
             id="new-hero"
             #heroName
-            class="w-full p-1 rounded"
+            class="w-full p-1 bg-purple-100 rounded"
             placeholder="Hero Name"
           />
         </div>
         <!-- (click) passes input value to add() and then clears the input -->
         <button
-          class="px-3 border-solid border-4 border-gray-300 ml-2 rounded"
+          class="
+            text-white
+            font-extrabold
+            px-3
+            border-solid border-4 border-purple-200
+            ml-2
+            bg-purple-900
+            rounded
+          "
           (click)="add(heroName.value); heroName.value = ''"
         >
-          Add hero
+          Add Hero
         </button>
       </div>
       <div class="grid">

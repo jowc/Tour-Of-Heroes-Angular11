@@ -15,12 +15,16 @@
             id="hero-name"
             [(ngModel)]="hero.name"
             placeholder="name"
-            class="bg-gray-50 w-full p-1 rounded"
+            class="bg-purple-100 w-full p-1 rounded"
           />
         </div>
-        <div class="flex justify-between mt-6">
-          <button (click)="goBack()">go back</button>
-          <button (click)="save(hero)">save</button>
+        <div class="flex justify-between mt-6 text-white font-extrabold">
+          <button (click)="goBack()" class="py-1 px-4 bg-red-300 rounded">
+            go back
+          </button>
+          <button (click)="save(hero)" class="py-1 px-4 bg-purple-700 rounded">
+            save
+          </button>
         </div>
       </div>
     </div>
