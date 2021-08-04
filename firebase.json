@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/careerpath-frontend",
     "ignore": [
       "firebase.json",
       "**/.*",
