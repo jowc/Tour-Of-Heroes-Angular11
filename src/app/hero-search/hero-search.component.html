@@ -1,12 +1,23 @@
-<div id="search-component">
-  <label for="search-box">Hero Search</label>
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-
-  <ul class="search-result">
-    <li *ngFor="let hero of heroes$ | async">
-      <a routerLink="/detail/{{ hero.id }}">
-        {{ hero.name }}
-      </a>
-    </li>
-  </ul>
+<div class="my-3 p-2 bg-primary text-white font-extrabold rounded">
+  <div class="flex content-center px-2">
+    <label class="block w-2/12 font-extrabold self-center" for="search-box"
+      >Search Hero</label
+    >
+    <div class="w-10/12 relative">
+      <input
+        #searchBox
+        id="search-box"
+        (input)="search(searchBox.value)"
+        placeholder="e.g. Narco"
+        class="py-1 px-2 bg-purple-50 rounded text-gray-800 w-full"
+      />
+      <ul class="hero-dropdown" *ngIf="searchBox.value">
+        <li *ngFor="let hero of heroes$ | async">
+          <a routerLink="/detail/{{ hero.id }}">
+            {{ hero.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

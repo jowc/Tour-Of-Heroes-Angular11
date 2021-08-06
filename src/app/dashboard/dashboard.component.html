@@ -1,8 +1,26 @@
-<h2>Top Heroes</h2>
-<div class="heroes-menu">
-  <a *ngFor="let hero of heroes" routerLink="{{ hero.id }}">
-    {{ hero.name }}
-  </a>
+<div
+  class="
+    flex flex-col
+    container
+    max-w-4xl
+    mx-auto
+    my-20
+    p-6
+    content-center
+    justify-center
+    font-quest font-normal
+    bg-gray-50
+    shadow
+    rounded
+  "
+>
+  <div class="bg-white p-3">
+    <app-hero-search></app-hero-search>
+    <h2>Top Heroes</h2>
+    <div class="heroes-menu">
+      <a *ngFor="let hero of heroes" routerLink="{{ hero.id }}">
+        {{ hero.name }}
+      </a>
+    </div>
+  </div>
 </div>
-
-<app-hero-search></app-hero-search>
