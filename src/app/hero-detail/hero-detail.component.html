@@ -1,21 +1,23 @@
 <div class="max-w-4xl mx-auto mt-6 font-quest font-normal">
-  <div class="p-6 bg-gray-50 shadow rounded" *ngIf="hero">
+  <div class="p-6 bg-gray-50 mx-2 shadow rounded" *ngIf="hero">
     <div class="bg-white p-4">
       <h2 class="my-3 p-2 bg-primary text-white font-extrabold rounded">
         {{ hero.name | uppercase }}
       </h2>
       <div class="p-2">
         <div class="flex">
-          <span class="w-2/6">id: </span>
-          <span class="w-full">{{ hero.id }}</span>
+          <span class="w-4/12 sm:w-2/6">id: </span>
+          <span class="w-8/12 sm:w-full">{{ hero.id }}</span>
         </div>
-        <div class="flex">
-          <label for="hero-name" class="w-2/6">Change name: </label>
+        <div class="flex mt-2">
+          <label for="hero-name" class="w-4/12 sm:w-2/6 text-base"
+            >Change name:
+          </label>
           <input
             id="hero-name"
             [(ngModel)]="hero.name"
             placeholder="name"
-            class="bg-purple-100 w-full p-1 rounded"
+            class="bg-purple-100 w-8/12 sm:w-full p-1 rounded"
           />
         </div>
         <div class="flex justify-between mt-6 text-white font-extrabold">
