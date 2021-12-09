@@ -1,5 +1,4 @@
-<div
-  class="
+<div class="
     flex flex-col
     container
     max-w-4xl
@@ -9,8 +8,7 @@
     content-center
     justify-center
     font-quest font-normal
-  "
->
+  ">
   <div class="py-6 px-6 bg-gray-50 mx-2 shadow rounded">
     <div class="bg-white">
       <h2 class="my-3 p-2 bg-primary text-white font-extrabold rounded">
@@ -19,16 +17,10 @@
       <div class="my-2 p-2 mr-5 bg-gray-100 grid grid-cols-4 rounded">
         <div class="col-span-2 sm:col-span-3">
           <label for="new-hero" class="hidden">Hero name: </label>
-          <input
-            id="new-hero"
-            #heroName
-            class="w-full p-1 bg-purple-100 rounded"
-            placeholder="Hero Name"
-          />
+          <input id="new-hero" #heroName class="w-full p-1 bg-purple-100 rounded" placeholder="Hero Name" />
         </div>
         <!-- (click) passes input value to add() and then clears the input -->
-        <button
-          class="
+        <button class="
             col-span-2
             sm:col-span-1
             text-white
@@ -38,40 +30,28 @@
             ml-2
             bg-purple-900
             rounded
-          "
-          (click)="add(heroName.value); heroName.value = ''"
-        >
+          " (click)="add(heroName.value); heroName.value = ''">
           Add Hero
         </button>
       </div>
       <div class="grid">
         <div>
           <ul class="overflow-y-scroll h-96 pr-3">
-            <li
-              class="
+            <li class="
                 my-3
                 p-2
                 text-gray-600
                 hover:bg-purple-50 hover:shadow-sm
                 cursor-pointer
-              "
-              *ngFor="let hero of heroes.reverse()"
-            >
-              <div routerLink="/detail/{{ hero.id }}" class="grid grid-cols-4">
+              " *ngFor="let hero of heroes.reverse()">
+              <div [routerLink]="['/detail/',  hero.id]" class="grid grid-cols-4">
                 <div class="col-span-3">
-                  <span
-                    class="p-2 bg-primary text-white rounded mr-4 font-bold"
-                    >{{ hero.id }}</span
-                  >
+                  <span class="p-2 bg-primary text-white rounded mr-4 font-bold">{{ hero.id }}</span>
                   <span>
                     {{ hero.name }}
                   </span>
                 </div>
-                <button
-                  class="text-red-700 text-xl"
-                  title="delete hero"
-                  (click)="delete(hero)"
-                >
+                <button class="text-red-700 text-xl" title="delete hero" (click)="delete(hero)">
                   x
                 </button>
               </div>
